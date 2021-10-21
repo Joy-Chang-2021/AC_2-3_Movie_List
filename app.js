@@ -1,9 +1,17 @@
+// express
 const express = require('express')
 const app = express()
 const port = 3000
+// handlebars
+const exphbs = require('express-handlebars')
 
+// express template engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
+//routes setting
 app.get('/', (req, res) => {
-  res.send('movie page')
+  res.render('index')
 })
 
 app.listen(port, () => {
