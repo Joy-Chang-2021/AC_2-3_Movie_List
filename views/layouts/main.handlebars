@@ -5,14 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie List</title>
+  {{!-- CSS file --}}
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
 </head>
 <body>
   {{!-- navigation --}}
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Movie List</a>
   </nav>
 
   {{!-- partial template will replace this part --}}
   {{{ body }}}
+
+{{!-- JS file --}}
+<script src="/javascript/popper.js"></script>
+<script src="/javascript/jquery-3.3.1.js"></script>
+<script src="/javascript/bootstrap.js"></script>
 </body>
 </html>
