@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
   res.render('index', { movies: movieList.results })
 })
 
+app.get('/movies/:id', (req, res) => {
+  const filtered_movie = movieList.results.find(item => item.id.toString() === req.params.id)
+  res.render('show',{ movie: filtered_movie })
+})
+
 app.listen(port, () => {
   console.log(`this page is running by http://localhost:${port}`)
 })
