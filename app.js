@@ -19,9 +19,16 @@ app.get('/', (req, res) => {
   res.render('index', { movies: movieList.results })
 })
 
+// : params
 app.get('/movies/:id', (req, res) => {
   const filtered_movie = movieList.results.find(item => item.id.toString() === req.params.id)
-  res.render('show',{ movie: filtered_movie })
+  res.render('show', { movie: filtered_movie})
+})
+
+// ? query
+app.get('/search', (req, res) => {
+  const filtered_List = movieList.results.filter(item => item.title.toLowerCase().includes(req.query.keyword.toLowerCase()))
+  res.render('index', { movies: filtered_List, keyword: req.query.keyword})
 })
 
 app.listen(port, () => {
